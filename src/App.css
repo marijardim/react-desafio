@@ -1,38 +1,51 @@
-.App {
-  text-align: center;
+body{
+  margin: 2rem;
+}
+img{
+  max-width: 100%;
+  border-radius: .5rem;
+}
+a{
+  text-decoration: none;
+  color: black;
+}
+h1{
+  font-size: 1.4rems;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.App{
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  max-width: 40rem;
+  margin: 0 auto;
+  min-height: calc(100vh + 10rem); /* 100% da altura da tela mais o tamanho exato do footer. Isso é feito pra sempre manter um scroll na página, evitando um pequeno bug na troca de paginas.*/
+}
+.content{
+  flex: 1; /* sempre vai se expandir ao máximo que der*/
+}
+.animeLeft{
+  transform: translateX(-20px);
+  opacity: 0;
+  animation: animeLeft .3s forwards;
 }
 
-.App-link {
-  color: #61dafb;
+@keyframes animeLeft {
+to{
+  transform: initial;
+  opacity: 1;
+}
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
+.loading{
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 10px solid #ccc;
+  border-right-color: transparent;
+  animation: loading 1s infinite;
+}
+@keyframes loading{
+  to{
     transform: rotate(360deg);
   }
 }
